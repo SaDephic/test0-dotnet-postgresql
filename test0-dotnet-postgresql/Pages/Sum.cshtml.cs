@@ -9,38 +9,50 @@ namespace test0_dotnet_postgresql.Pages
         {
             _context = context;
         }
+
+        public IList<Employee> Employees { get; set; }
+        public IList<Department> Department { get; set; }
+
         public List<CutSalary> with_result = new List<CutSalary>();
         public List<CutSalary> without_result = new List<CutSalary>();
         public async Task OnGet()
         {
-
-            var catdepart = _context.employee.ToList().GroupBy(x => x.Department_id);
+            Employees = _context.employee.ToList();
+            Department = _context.department.ToList();
+            //with chief
+            var catdepart = Employees.ToList().GroupBy(x => x.Department_id);
             foreach (var d_id in catdepart)
             {
-                var summ = d_id.Sum(x => x.Salary);
+                var summ = d_id.Sum(x => x.Salary * 12);
                 with_result.Add(new CutSalary
                 {
                     Id = with_result.Count + 1,
-                    Department_name = _context.department.ToList().Find(x => x.Id == d_id.Key).Name,
+                    Department_name = Department.ToList().Find(x => x.Id == d_id.Key).Name,
                     Salary = summ / 12
                 });
             }
 
+            //without_chief
+            List<Employee> listemployee = Employees.ToList();
+            //get all chef id
+            var chiefs = listemployee.GroupBy(x => x.Chief_id);
+            //remove all chief id
+            foreach (var d_id in chiefs)
+            {
+                if (d_id.Key != null)
+                    listemployee.RemoveAll(s => s.Id == d_id.Key);
+            }
+
+            catdepart = listemployee.ToList().GroupBy(x => x.Department_id);
+            //do departments
             foreach (var d_id in catdepart)
             {
-                List<Employee> nulled = d_id.ToList().FindAll(x => x.Chief_id.Equals(0)).ToList();
-                while(nulled.Count > 0)
-                {
-                    d_id.ToList().Remove(nulled.FirstOrDefault()); 
-                    nulled.RemoveAt(0); 
-                }
-
-                var summ = d_id.Sum(x => x.Salary);
+                var summ = d_id.Sum(x => x.Salary * 12);
                 without_result.Add(new CutSalary
                 {
                     Id = without_result.Count + 1,
                     Department_name = _context.department.ToList().Find(x => x.Id == d_id.Key).Name,
-                    Salary = summ /12
+                    Salary = summ / 12
                 });
             }
         }

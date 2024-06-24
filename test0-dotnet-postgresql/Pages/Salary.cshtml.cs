@@ -11,13 +11,17 @@ namespace test0_dotnet_postgresql.Pages
         {
             _context = context;
         }
+
+        public IList<Employee> Employees { get; set; }
+
         public List<Employee> result = new List<Employee>();
         public async Task OnGet()
         {
-            var catdepart = _context.employee.ToList().GroupBy(x => x.Department_id);
+            Employees = _context.employee.ToList();
+            var catdepart = Employees.GroupBy(x => x.Department_id);
             foreach (var d_id in catdepart)
             {
-                result.AddRange(d_id.ToList().OrderBy(x => x.Salary).ToList());
+                result.AddRange(d_id.ToList().OrderByDescending(x => x.Salary));
             }
             //result = result.OrderBy(pet => pet.Chief_id).ThenBy(pet => pet.Salary).ToList();
         }

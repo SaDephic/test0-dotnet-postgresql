@@ -10,6 +10,8 @@ namespace test0_dotnet_postgresql.Pages
         {
             _context = context;
         }
+        public IList<Employee> Employees { get; set; }
+        public IList<Department> Department { get; set; }
 
         public List<Department> result = new List<Department>();
 
@@ -22,7 +24,10 @@ namespace test0_dotnet_postgresql.Pages
                 result.AddRange(_context.department.ToList().Where(x => x.Id == d_id.ToList().MaxBy(t => t.Salary).Department_id).ToList());
             }*/
 
-            result = _context.department.ToList().Where(x => x.Id == _context.employee.ToList().MaxBy(t => t.Salary).Department_id).ToList();
+            Employees = _context.employee.ToList();
+            Department = _context.department.ToList();
+
+            result = Department.Where(x => x.Id == Employees.MaxBy(t => t.Salary).Department_id).ToList();
 
             /*Employee temp = new Employee();
             for (int i = 0; i < Employees.Count; ++i)
