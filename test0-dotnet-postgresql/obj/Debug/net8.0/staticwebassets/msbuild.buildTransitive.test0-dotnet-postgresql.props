@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\test0-dotnet-postgresql.props" />
+</Project>

@@ -1,0 +1,82 @@
+﻿@page
+@model test0_dotnet_postgresql.Pages.ListModel
+@{
+    ViewData["Title"] = "Main";
+}
+
+<h1>Lists</h1>
+
+<h2>Department</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].Name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Department)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Employee</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees[0].Department_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees[0].Chief_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees[0].Salary)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Employees)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Chief_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

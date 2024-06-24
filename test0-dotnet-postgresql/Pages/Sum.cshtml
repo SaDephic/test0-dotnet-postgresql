@@ -1,0 +1,73 @@
+﻿@page
+@model test0_dotnet_postgresql.Pages.SumModel
+@{
+    ViewData["Title"] = "Sum";
+}
+
+<h2>With chief</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.with_result[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.with_result[0].Department_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.with_result[0].Salary)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.with_result)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Without chief</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.without_result[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.without_result[0].Department_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.without_result[0].Salary)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.without_result)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
