@@ -9,6 +9,7 @@ namespace test0_dotnet_postgresql
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
+            //for memory
             //Database.EnsureDeleted();
             //Database.EnsureCreated();
         }
