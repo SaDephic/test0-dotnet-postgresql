@@ -9,7 +9,7 @@
     https://remontka.pro/environment-variables-windows/
 
 # Сборка проекта:
-В каталоге проекта "\test0-dotnet-postgresql\test0-dotnet-postgresql" выполнить команду:
+В каталоге проекта ".\test0-dotnet-postgresql\test0-dotnet-postgresql" выполнить команду:
 
     dotnet run
 
