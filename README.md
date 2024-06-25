@@ -6,6 +6,7 @@
 # Параметры подключения к базе данных указываются в перемененные среды ОС:
     DB_STRING 
     Server=192.168.1.66;Port=6661;Username=postgres;password=1;database=postgres
+    https://remontka.pro/environment-variables-windows/
 
 # Сборка проекта:
 В каталоге проекта "\test0-dotnet-postgresql\test0-dotnet-postgresql" выполнить команду:
