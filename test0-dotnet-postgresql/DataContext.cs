@@ -9,10 +9,10 @@ namespace test0_dotnet_postgresql
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
+            //Database.EnsureDeleted();
+            //Database.EnsureCreated();
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Department>().HasData(
                 new Department { Id = 1, Name = "D1" },
@@ -28,6 +28,6 @@ namespace test0_dotnet_postgresql
                 new Employee { Id = 6, Department_id = 3, Chief_id = 7, Name = "Alex", Salary = 1000 },
                 new Employee { Id = 7, Department_id = 3, Chief_id = null, Name = "Ivan", Salary = 1100 }
             );
-        }
+        }*/
     }
 }

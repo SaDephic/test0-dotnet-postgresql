@@ -35,3 +35,6 @@ C:\Users\bard_merlin\net\test0-dotnet-postgresql\test0-dotnet-postgresql\obj\Deb
 C:\Users\bard_merlin\net\test0-dotnet-postgresql\test0-dotnet-postgresql\obj\Debug\net8.0\test0-dotnet-postgresql.pdb
 C:\Users\bard_merlin\net\test0-dotnet-postgresql\test0-dotnet-postgresql\obj\Debug\net8.0\test0-dotnet-postgresql.genruntimeconfig.cache
 C:\Users\bard_merlin\net\test0-dotnet-postgresql\test0-dotnet-postgresql\obj\Debug\net8.0\ref\test0-dotnet-postgresql.dll
+C:\Users\bard_merlin\net\test0-dotnet-postgresql\test0-dotnet-postgresql\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\bard_merlin\net\test0-dotnet-postgresql\test0-dotnet-postgresql\bin\Debug\net8.0\Npgsql.dll
+C:\Users\bard_merlin\net\test0-dotnet-postgresql\test0-dotnet-postgresql\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

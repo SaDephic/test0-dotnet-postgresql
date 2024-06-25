@@ -11,7 +11,7 @@ namespace test0_dotnet_postgresql
         public string Name { get; set; }
 
         public override string ToString()
-        {
+        {   
             var sb = new StringBuilder();
             sb.Append("class Department {\n");
             sb.Append("  ID: ").Append(Id).Append("\n");
